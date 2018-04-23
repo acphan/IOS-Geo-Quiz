@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IN5-1C-FdN">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="Tka-9q-Aio">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kc4-NL-Se4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="IN5-1C-FdN" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="8nm-5l-t0d"/>
+                    <connections>
+                        <segue destination="bgV-Tk-xT1" kind="show" identifier="annotationPress" id="Kg1-mn-iSg"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="650" y="156"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="jsH-eE-5Fj">
+            <objects>
+                <tableViewController id="oap-Zv-cKY" customClass="quizViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eLO-Qg-1uB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9OU-zC-WDc">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9OU-zC-WDc" id="jMr-uf-2Qu">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oap-Zv-cKY" id="B7a-hg-K5I"/>
+                            <outlet property="delegate" destination="oap-Zv-cKY" id="tkh-gd-b7a"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Z2a-7T-NRC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEc-u3-nUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2810" y="-138"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7YE-dq-Cw3">
+            <objects>
+                <navigationController id="bgV-Tk-xT1" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DVu-IR-jSa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oap-Zv-cKY" kind="relationship" relationship="rootViewController" id="TB8-uq-T3V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVS-Vc-yaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="-138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MapIcon" width="48" height="32"/>
+    </resources>
+</document>
